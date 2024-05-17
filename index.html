@@ -16,12 +16,15 @@
     <script src="./scripts/set-theme.js"></script>
   </head>
   <body class="page">
-    <dialog>
-      <svg viewBox="0 0 24 24">
-        <use href="#floppy">
-      </svg> 
-      <p>Вставьте
-        дискету, чтобы продолжить</p>
+    <dialog open class="dialog" id="dialog-id">
+      <div class="dialog-floppy">
+        <svg class="floppy-svg">
+          <use href="#floppy">
+        </svg> 
+        <p class="dialog-text">Вставьте<br>
+          дискету, чтобы<br> продолжить</p>
+      </div>
+      <button class="dialog-button" type="button" onclick="window['dialog-id'].close()">Ok</button>
     </dialog>
     <header class="header">
       <h1 class="header-title">&lt;/HTML&gt;</h1>

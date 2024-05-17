@@ -24,11 +24,56 @@
   font-variation-settings: "wght" var(--text-font-weight);
 }
 
+.dialog {
+  position: fixed;
+  inset: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.dialog::backdrop {
+  background-color: rgb(0 0 0 / 0.3);
+  backdrop-filter: blur(7px);
+}
+
+.dialog-floppy {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 30px;
+}
+
+.dialog-text {
+  font-family: var(--accent-font);
+  font-size: 14px;
+  text-transform: uppercase;
+  line-height: 21px;
+}
+
+.floppy-svg {
+  width: 39px;
+  height: 39px;
+}
+
+.dialog-button {
+  width: 293px;
+  height: 38px;
+  margin-block-end: 14px;
+  margin-inline-end: 30px;
+  margin-inline-start: 30px;
+  font-family: var(--accent-font);
+  font-size: 14px;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  background-color: transparent;
+  border: none;
+  outline: 4px solid var(--accent-color);
+}
+
 .header {
   inline-size: 700px;
   block-size: 368px;
-  background-color: white;
   border: 2px solid var(--accent-color);
+  background-color: white;
   display: flex;
   gap: 20px;
   flex-direction: column;
@@ -37,10 +82,6 @@
   font-family: var(--accent-font), sans-serif;
   padding-block-end: 25px;
   margin-block-start: 100px;
-}
-
-.icontest {
-  display: block;
 }
 
 .header-title {
