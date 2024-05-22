@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="./styles/style.css" />
     <link rel="stylesheet" href="./styles/animations.css" />
     <link rel="stylesheet" href="./styles/themes.css" />
-    <link rel="icon" href="./svg/favicon.svg">
-    <link rel="apple-touch-icon" href="./svg/favicon.svg">
+    <link rel="icon" href="./svg/favicon.svg" />
+    <link rel="apple-touch-icon" href="./svg/favicon.svg" />
     <script src="./scripts/set-theme.js"></script>
   </head>
   <body class="page">
@@ -21,10 +21,19 @@
         <svg viewBox="0 0 39 39" class="floppy-svg">
           <use href="#floppy">
         </svg> 
-        <p class="dialog-text">Вставьте<br>
-          дискету, чтобы<br> продолжить</p>
+        <p class="dialog-text">
+          Вставьте<br />
+          дискету, чтобы<br />
+          продолжить
+        </p>
       </div>
-      <button class="dialog-button" type="button" onclick="window['dialog-id'].close()">Ok</button>
+      <button
+        class="dialog-button"
+        type="button"
+        onclick="window['dialog-id'].close()"
+      >
+        Ok
+      </button>
     </dialog>
     <header class="header">
       <h1 class="header-title">&lt;/HTML&gt;</h1>
@@ -55,8 +64,34 @@
         </ul>
       </nav>
     </header>
-    <main>
-      
+    <main class="main">
+      <!-- Карточка с контентом: -->
+
+      <article class="card">
+        <div class="card-tittle__block">
+          <h2 class="card-tittle">
+            Фритрек и нулевой спринт: Подготовка к работе
+          </h2>
+        </div>
+        <div class="card-image__block">
+          <img
+            class="card-image"
+            src="./images/minivan.png"
+            alt="Изображение минивена в стиле ретро игр"
+          />
+        </div>
+        <div class="card-text__block">
+          <p class="card-text">
+            Это было самое начало пути. На этом этапе важно было проникнуться
+            основами и настроиться на учёбу. И, возможно, подумать, как новые
+            знания могут повлиять на ваше будущее.
+          </p>
+          <p class="card-text card-text__add">
+            Место для ваших воспоминаний о начале обучения.
+          </p>
+          <button type="button" class="card__like-button">Like</button>
+        </div>
+      </article>
     </main>
     <script src="./scripts/like.js"></script>
   </body>

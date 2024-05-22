@@ -8,14 +8,14 @@
   --title-font-weight: 785;
   --text-font-weight: 400;
   --accent-color: #00cc14;
-  --background: ;
+  --background: #000;
 }
 
 :root.theme-light {
   --title-font-weight: 700;
   --text-font-weight: 400;
   --accent-color: #000;
-  --background: ;
+  --background: #fff;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,7 +23,7 @@
     --title-font-weight: 785;
     --text-font-weight: 400;
     --accent-color: #00cc14;
-    --background: ;
+    --background: #000;
   }
 }
 
@@ -32,6 +32,6 @@
     --title-font-weight: 700;
     --text-font-weight: 400;
     --accent-color: #000;
-    --background: ;
+    --background: #fff;
   }
 }

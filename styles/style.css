@@ -18,14 +18,16 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   background-image: url(../images/header-background.png);
   font-family: var(--main-font), sans-serif;
-  font-variation-settings: "wght" var(--text-font-weight);
+  font-variation-settings: var(--text-font-weight);
 }
 
 .dialog {
   position: fixed;
+  background-color: var(--background);
   inset: 0;
   transition: opacity 0.3s ease-in-out;
   border: 2px solid var(--accent-color);
@@ -75,7 +77,7 @@
   inline-size: 696px;
   block-size: 398px;
   border: 2px solid var(--accent-color);
-  background-color: white;
+  background-color: var(--background);
   display: flex;
   gap: 20px;
   flex-direction: column;
@@ -111,4 +113,73 @@
 
 .theme-menu__button:hover {
   opacity: 60%;
+}
+
+.card {
+  inline-size: 696px;
+  margin-block-start: 100px;
+  background-color: var(--background);
+  color: var(--accent-color);
+  outline: 2px solid var(--accent-color);
+}
+
+.card-tittle__block {
+  background-color: var(--background);
+  outline: 2px solid var(--accent-color);
+  padding: 5px 10px;
+}
+
+.card-tittle {
+  font-size: 18px;
+  font-weight: var(--title-font-weight);
+  line-height: 21.78px;
+}
+
+.card-image__block {
+  position: relative;
+  block-size: 696px;
+  outline: 2px solid var(--accent-color);
+}
+
+.card-image__block::after {
+  content: "</HTML>";
+  color: var(--accent-color);
+  font-family: var(--accent-font);
+  font-size: 14px;
+  -webkit-text-stroke: 1px #fff;
+  opacity: 50%;
+  position: absolute;
+  inset-block-start: 25px;
+  inset-inline-end: 25px;
+}
+
+.card-image {
+  width: 100%;
+}
+
+.card-text__block {
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  outline: 2px solid var(--accent-color);
+}
+
+.card-text {
+  font-size: 18px;
+}
+
+.card-text__add {
+  margin-block-start: 27px;
+}
+
+.card__like-button {
+  width: 169px;
+  height: 38px;
+  margin-block-start: 25px;
+  font-family: var(--accent-font);
+  font-weight: var(--title-font-weight);
+  font-size: 14px;
+  align-self: flex-end;
+  background-color: transparent;
+  border: 2px solid var(--accent-color);
 }
