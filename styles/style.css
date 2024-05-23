@@ -34,8 +34,7 @@
 }
 
 .dialog::backdrop {
-  background-color: rgb(0 0 0 / 0.3);
-  backdrop-filter: blur(7px);
+  background-color: rgb(0 0 0 / 0.5);
 }
 
 .dialog-floppy {
@@ -54,13 +53,13 @@
 }
 
 .floppy-svg {
-  width: 39px;
+  inline-size: 39px;
   color: var(--accent-color);
 }
 
 .dialog-button {
-  width: 293px;
-  height: 38px;
+  inline-size: 293px;
+  block-size: 38px;
   margin-block-end: 14px;
   margin-inline-end: 30px;
   margin-inline-start: 30px;
@@ -74,8 +73,8 @@
 }
 
 .header {
-  inline-size: 696px;
-  block-size: 398px;
+  inline-size: 700px;
+  block-size: 368px;
   border: 2px solid var(--accent-color);
   background-color: var(--background);
   display: flex;
@@ -107,6 +106,7 @@
 }
 
 .theme-menu__button {
+  position: relative;
   color: var(--accent-color);
   border: none;
   background-color: transparent;
@@ -116,6 +116,12 @@
 
 .theme-menu__button:hover {
   opacity: 60%;
+}
+
+.theme-menu__button:disabled::before {
+  content: "▶"; 
+  position: absolute;
+  inset-inline-start: -15px;
 }
 
 .card {
