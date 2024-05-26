@@ -29,12 +29,11 @@
   position: fixed;
   background-color: var(--background);
   inset: 0;
-  transition: opacity 0.3s ease-in-out;
+  z-index: 1;
   border: 2px solid var(--accent-color);
 }
 
 .dialog::backdrop {
-  background-color: rgb(0 0 0 / 0.5);
 }
 
 .dialog-floppy {
