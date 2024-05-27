@@ -20,20 +20,30 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url(../images/header-background.png);
+  background-image: var(--background-image);
+  background-position: 50% 50%;
+  background-size: cover;
+  background-attachment: fixed;
   font-family: var(--main-font), sans-serif;
   font-variation-settings: var(--text-font-weight);
 }
 
+/* Дописать "резиновую" ширину для класса ниже, для шапки и карточки! */
+.container {
+  inline-size: var(--width);
+}
+
 .dialog {
   position: fixed;
-  background-color: var(--background);
+  background-color: var(--background-color);
   inset: 0;
   z-index: 1;
   border: 2px solid var(--accent-color);
 }
 
+/* Бекдроп НЕ работает, разобраться! */
 .dialog::backdrop {
+  background-color: #fff;
 }
 
 .dialog-floppy {
@@ -72,10 +82,8 @@
 }
 
 .header {
-  inline-size: 700px;
-  block-size: 368px;
-  border: 2px solid var(--accent-color);
-  background-color: var(--background);
+  outline: 2px solid var(--accent-color);
+  background-color: var(--background-color);
   display: flex;
   gap: 20px;
   flex-direction: column;
@@ -83,13 +91,18 @@
   align-items: center;
   font-family: var(--accent-font), sans-serif;
   text-transform: uppercase;
-  padding-block-end: 25px;
+  padding: 136px 120.5px 25px;
   margin-block-start: 100px;
+
+    @media (max-width: 375px) {
+      inline-size: 100%;
+      padding: 136px 14px 25px;
+  }
 }
 
 .header-title {
   color: var(--accent-color);
-  font-size: 65px;
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
 }
 
 .header-title__bottom {
@@ -98,7 +111,7 @@
   margin-block-end: 5px;
 }
 
-.header__theme-menu .theme-menu__list {
+.theme-menu__list {
   display: flex;
   flex-direction: column;
   gap: 14px;
@@ -111,6 +124,7 @@
   background-color: transparent;
   text-transform: uppercase;
   font-size: 14px;
+  line-height: 14px;
 }
 
 .theme-menu__button:hover {
@@ -120,15 +134,19 @@
 .theme-menu__button:disabled::before {
   content: "▶"; 
   position: absolute;
-  inset-inline-start: -15px;
+  inset-inline-start: -10px;
 }
 
 .card {
   inline-size: 696px;
   margin-block-start: 100px;
-  background-color: var(--background);
+  background-color: var(--background-color);
   color: var(--accent-color);
   outline: 2px solid var(--accent-color);
+
+  @media (max-width: 375px) {
+    inline-size: 100%;
+}
 }
 
 .card-tittle__block {
