@@ -31,6 +31,11 @@
 /* Дописать "резиновую" ширину для класса ниже, для шапки и карточки! */
 .container {
   inline-size: var(--container-width);
+  margin: 0 auto;
+
+  @media (max-width: 375px) {
+    inline-size: 100%;
+  }
 }
 
 .dialog {
@@ -86,7 +91,6 @@
   display: flex;
   gap: 20px;
   flex-direction: column;
-  justify-content: flex-end;
   align-items: center;
   font-family: var(--accent-font), sans-serif;
   text-transform: uppercase;
@@ -162,6 +166,7 @@
   outline: 2px solid var(--accent-color);
 }
 
+/* Скорее всего делается не так: */
 .card-image__block::after {
   content: "</HTML>";
   color: var(--accent-color);
@@ -175,6 +180,7 @@
 }
 
 .card-image {
+  inline-size: 100%;
   object-fit: cover;
 }
 
