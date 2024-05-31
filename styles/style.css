@@ -28,7 +28,6 @@
   font-variation-settings: var(--text-font-weight);
 }
 
-/* Дописать "резиновую" ширину для класса ниже, для шапки и карточки! */
 .container {
   inline-size: var(--container-width);
   margin: 0 auto;
@@ -231,4 +230,12 @@
   align-self: flex-end;
   background-color: transparent;
   border: 2px solid var(--accent-color);
+}
+
+.footer {
+  margin-block-start: 50px;
+}
+
+.footer-button {
+  background-color: var(--background-color);
 }
