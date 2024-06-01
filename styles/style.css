@@ -237,5 +237,19 @@
 }
 
 .footer-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 18.5px 21px 18.5px 19px;
   background-color: var(--background-color);
+  border: 2px solid var(--accent-color);
+}
+
+.floppy-svg__footer {
+  inline-size: 21px;
+}
+
+.footer-button__text {
+  line-height: normal;
+  text-transform: none;
 }
