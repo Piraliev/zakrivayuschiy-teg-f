@@ -128,8 +128,32 @@
   line-height: 14px;
 }
 
-.theme-menu__button:hover {
+.theme-menu__button:focus {
+  outline: none;
   opacity: 60%;
+}
+
+/* ДОДЕЛАТЬ ФОКУС ЭФФЕКТ!!! */
+
+.theme-menu__button::after {
+  content: "_";
+  position: absolute;
+  display: block;
+  inset-block-end: -5px;
+  scale: 0;
+}
+
+.theme-menu__button:hover {
+  transition: 0.3s;
+  transition-timing-function: ease;
+  opacity: 60%;
+}
+
+.theme-menu__button:disabled {
+  transition: 0.3s;
+  transition-timing-function: ease;
+  opacity: 60%;
+  pointer-events: none;
 }
 
 .theme-menu__button:disabled::before {
