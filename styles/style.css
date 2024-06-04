@@ -37,6 +37,10 @@
   }
 }
 
+.button {
+  cursor: pointer;
+}
+
 .dialog {
   position: fixed;
   background-color: var(--background-color);
@@ -135,13 +139,22 @@
 
 /* ДОДЕЛАТЬ ФОКУС ЭФФЕКТ!!! */
 
-.theme-menu__button::after {
-  content: "_";
-  position: absolute;
-  display: block;
-  inset-block-end: -5px;
+.theme-menu__button:focus-visible::after {
+  content: "______";
+  animation-name: focus-visible;
+  animation-duration: 1s;
+  animation-timing-function: ease;
   scale: 0;
 }
+
+/* @keyframes focus-visible {
+  from {
+    scale: 0;
+  }
+  to {
+    scale: 1;
+  }
+} */
 
 .theme-menu__button:hover {
   transition: 0.3s;
