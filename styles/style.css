@@ -123,6 +123,7 @@
 }
 
 .theme-menu__button {
+  display: inline-block;
   position: relative;
   color: var(--accent-color);
   border: none;
@@ -135,37 +136,32 @@
 .theme-menu__button:focus {
   outline: none;
   opacity: 60%;
+  transition: opacity .3s ease;
 }
 
-/* ДОДЕЛАТЬ ФОКУС ЭФФЕКТ!!! */
+.theme-menu__button::after {
+  content: "";
+  display: block; 
+  width: 100%;
+  height: 2px;
+  background-color: var(--accent-color);
+  transform: scale(0);
+  transform-origin: left;
+}
 
 .theme-menu__button:focus-visible::after {
-  content: "______";
-  animation-name: focus-visible;
-  animation-duration: 1s;
-  animation-timing-function: ease;
-  scale: 0;
+  transform: scale(1);
+  transition: transform .3s ease;
 }
 
-/* @keyframes focus-visible {
-  from {
-    scale: 0;
-  }
-  to {
-    scale: 1;
-  }
-} */
-
 .theme-menu__button:hover {
-  transition: 0.3s;
-  transition-timing-function: ease;
   opacity: 60%;
+  transition: opacity .3s ease;
 }
 
 .theme-menu__button:disabled {
-  transition: 0.3s;
-  transition-timing-function: ease;
   opacity: 60%;
+  transition: opacity .3s ease;
   pointer-events: none;
 }
 
@@ -173,6 +169,20 @@
   content: "▶"; 
   position: absolute;
   inset-inline-start: -10px;
+  animation-name: menu-arrow;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+}
+
+@keyframes menu-arrow {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-4px);
+  }
 }
 
 .main {
@@ -207,17 +217,30 @@
   border-bottom: none;
 }
 
-/* Скорее всего делается не так: */
 .card-image__label {
   color: var(--accent-color);
   font-family: var(--accent-font);
   font-size: 14px;
+  line-height: 14px;
   text-transform: uppercase;
-  -webkit-text-stroke: 0.5px #fff;
+  text-shadow: -1px 0 var(--text-stroke-color), 0 1px var(--text-stroke-color), 1px 0 var(--text-stroke-color), 0 -1px var(--text-stroke-color);
   mix-blend-mode: hard-light;
+  opacity: 50%;
   position: absolute;
   inset-block-start: 25px;
   inset-inline-end: 25px;
+
+  @media (width <= 375px) {
+    inset-inline-end: 13px;
+  }
+}
+
+@supports((text-stroke: 1px var(--text-stroke-color)) or (-webkit-text-stroke: 1px var(--text-stroke-color))) {
+  .card-image__label {
+    -webkit-text-stroke: 1px var(--text-stroke-color);
+    text-stroke: 1px var(--text-stroke-color);
+    text-shadow: none;
+  }
 }
 
 .card-image {
@@ -235,21 +258,34 @@
 
 .card-text {
   font-size: 18px;
+  line-height: 21px;
 }
 
-.card-text__add {
+.card-text__bottom {
   margin-block-start: 27px;
 }
 
 .buttons {
   display: flex;
+  gap: 12px;
   justify-content: flex-end;
 }
 
 .card__icon-button {
+  display: flex;
+  padding: 0;
   align-self: flex-end;
   background-color: transparent;
   border: none;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  outline: 2px solid var(--accent-color);
+  transition: outline .3s ease;
 }
 
 .like-icon{
@@ -258,6 +294,7 @@
 }
 
 .card__like-button {
+  position: relative;
   padding: 12.5px 37px;
   margin-block-start: 25px;
   font-family: var(--accent-font);
@@ -269,11 +306,42 @@
   border: 2px solid var(--accent-color);
 }
 
+.card__like-button:focus {
+  outline: none;
+  box-shadow: 2px 2px 0 0 var(--accent-color);
+  transition: box-shadow .3s ease;
+}
+
+.card__like-button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  background-color: var(--accent-color);
+  transform: scale(0, 1);
+  transform-origin: left;
+}
+
+.card__like-button:hover::after {
+  transform: scale(1);
+  transition: transform 0.5s ease-in-out;
+}
+
+.button__text {
+  font-weight: var(--text-font-weight);
+  mix-blend-mode: difference;
+  position: relative;
+  color: var(--mix-blend-color);
+  z-index: 1;
+}
+
 .footer {
   margin-block-start: 50px;
 }
 
 .footer-button {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -282,8 +350,34 @@
   border: 2px solid var(--accent-color);
 }
 
+.footer-button:focus {
+  outline: none;
+  box-shadow: 2px 2px 0 0 var(--accent-color);
+  transition: box-shadow .3s ease;
+}
+
+.footer-button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  background-color: var(--accent-color);
+  transform: scale(0, 1);
+  transform-origin: left;
+}
+
+.footer-button:hover::after {
+  transform: scale(1);
+  transition: transform 0.5s ease-in-out;
+}
+
 .floppy-svg__footer {
   inline-size: 21px;
+  mix-blend-mode: difference;
+  position: relative;
+  color: var(--mix-blend-color);
+  z-index: 1;
 }
 
 .footer-button__text {

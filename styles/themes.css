@@ -13,6 +13,8 @@
     repeating-linear-gradient(90deg, #000, transparent 2px),
     linear-gradient(#007f0c, #004306);
   --background-color: #000;
+  --text-stroke-color: #000;
+  --mix-blend-color: #00cc14;
 }
 
 :root.theme-light {
@@ -24,6 +26,8 @@
     repeating-linear-gradient(90deg, #d3d3d3, transparent 2px),
     linear-gradient(#e7e7e7, #1a1a1a);
   --background-color: #fff;
+  --text-stroke-color: #fff;
+  --mix-blend-color: #fff;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -36,5 +40,7 @@
       repeating-linear-gradient(90deg, #d3d3d3, transparent 2px),
       linear-gradient(#e7e7e7, #1a1a1a);
     --background-color: #fff;
+    --text-stroke-color: #000;
+    --mix-blend-color: #00cc14;
   }
 }
