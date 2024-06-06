@@ -49,9 +49,8 @@
   border: 2px solid var(--accent-color);
 }
 
-/* Бекдроп НЕ работает, разобраться! */
-.dialog::backdrop {
-  background-color: #fff;
+dialog::backdrop {
+  background-color: rgb(0 0 0 / 0.75);
 }
 
 .dialog-floppy {
@@ -247,6 +246,7 @@
   inline-size: 100%;
   block-size: 100%;
   object-fit: cover;
+  filter: sepia(50%);
 }
 
 .card-text__block {
@@ -269,12 +269,12 @@
   display: flex;
   gap: 12px;
   justify-content: flex-end;
+  margin-block-start: 25px;
 }
 
 .card__icon-button {
   display: flex;
   padding: 0;
-  align-self: flex-end;
   background-color: transparent;
   border: 2px solid transparent;
 }
@@ -288,15 +288,15 @@
   transition: border .3s ease;
 }
 
-.like-icon{
-  inline-size: 37px;
-  color: var(--accent-color);
+.like-icon {
+  inline-size: 39px;
+  block-size: 36px;
+  /* color: var(--accent-color); */
 }
 
 .card__like-button {
   position: relative;
   padding: 12.5px 37px;
-  margin-block-start: 25px;
   font-family: var(--accent-font);
   font-weight: var(--title-font-weight);
   font-size: 14px;
@@ -321,6 +321,7 @@
   background-color: var(--accent-color);
   transform: scale(0, 1);
   transform-origin: left;
+  transition: transform 0.5s ease-in-out;
 }
 
 .card__like-button:hover::after {
@@ -365,6 +366,7 @@
   background-color: var(--accent-color);
   transform: scale(0, 1);
   transform-origin: left;
+  transition: transform 0.5s ease-in-out;
 }
 
 .footer-button:hover::after {
@@ -383,4 +385,98 @@
 .footer-button__text {
   line-height: normal;
   text-transform: none;
+}
+
+/* SVG classes: */
+
+.sparks {
+  opacity: 0;
+}
+
+.core {
+  fill: var(--background-color);
+  transition: fill 0.3s ease-in-out 0.03s;
+}
+
+.card__icon-button:hover .core {
+  fill: var(--contour-color);
+  transition: fill 0.3s ease-in-out;
+}
+
+.card__icon-button:active .core {
+  fill: var(--filling-color);
+  transition: fill 0.3s ease-in-out;
+}
+
+.main-body {
+  fill: var(--background-color);
+  transition: fill 0.3s ease-in-out;
+}
+
+.card__icon-button:hover .main-body {
+  fill: var(--contour-color);
+  transition: fill 0.3s ease-in-out 0.05s;
+}
+
+.card__icon-button:active .main-body {
+  fill: var(--filling-color);
+  transition: fill 0.3s ease-in-out 0.05s;
+}
+
+.like-icon.is-liked .core {
+  fill: var(--filling-color);
+  transition: fill 0.3s ease-in-out;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--filling-color);
+  transition: fill 0.3s ease-in-out;
+}
+
+.contour {
+  fill: var(--contour-color);
+  transition: fill 0.1s ease;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--filling-color);
+  transition: fill 0.3s ease-in-out 0.06s;
+}
+
+.like-icon.is-liked .heart {
+  animation: heart-scale 0.3s ease-in 0.1s 1;
+  transform-origin: center;
+}
+
+@keyframes heart-scale {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.5);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.like-icon.like-icon.is-liked .sparks {
+  animation: sparks-opacity 0.3s ease-in 0.3s 1;
+  transform-origin: center;
+}
+
+@keyframes sparks-opacity {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }

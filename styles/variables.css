@@ -12,4 +12,7 @@
   --background-color: #fff;
   --container-width: clamp(23.438rem, 16.285rem + 30.516vw, 43.75rem);
   --text-stroke-color: #fff;
+  --mix-blend-color: #fff;
+  --contour-color: #000;
+  --filling-color: #FF0000;
 }
