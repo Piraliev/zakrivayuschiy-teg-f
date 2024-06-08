@@ -385,30 +385,30 @@ dialog::backdrop {
 }
 
 .second-image {
-  filter: grayscale(50%);
+  filter: grayscale(20%);
 }
 
 .third-image {
-  
+  filter: drop-shadow(2px 2px coral) contrast(150%) drop-shadow(-2px -2px lime);
 }
 
 .fourth-image {
-
+  filter: opacity(70%);
 }
 
 .fifth-image {
-
+  filter: hue-rotate(175deg);
 }
 
 .sixth-image {
-
+  filter: invert(100%);
 }
 
 .seventh-image {
-
+  filter: drop-shadow(3px 3px 3px #ec6d04) blur(5px);
 }
 
 .eighth-image {
-
+  filter: saturate(150%);
 }
 
