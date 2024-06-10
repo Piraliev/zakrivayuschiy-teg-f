@@ -168,6 +168,7 @@ dialog::backdrop {
   text-transform: uppercase;
   background-color: transparent;
   transition: all 0.3 ease;
+  cursor: pointer;
 }
 
 .theme-menu__button:focus {
@@ -337,9 +338,9 @@ dialog::backdrop {
 }
 
 .card__like-button {
+  inline-size: 130px;
   font-size: 14px;
   line-height: 12.6px;
-  padding: 10.5px 35px;
 }
 
 .button__text {
