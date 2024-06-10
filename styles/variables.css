@@ -6,11 +6,12 @@
   --text-font-weight: 400;
   --accent-color: #000;
   --background-image: 
-    repeating-linear-gradient(#d3d3d3, transparent 2px),
-    repeating-linear-gradient(90deg, #d3d3d3, transparent 2px),
-    linear-gradient(90deg, #e7e7e7, #1a1a1a);
+    repeating-linear-gradient(#d3d3d3 0px 1px, transparent 1px 2px),
+    repeating-linear-gradient(90deg, #d3d3d3 0px 1px, transparent 1px 2px),
+    linear-gradient(#e7e7e7, #1a1a1a);
   --background-color: #fff;
-  --container-width: clamp(23.438rem, 16.285rem + 30.516vw, 43.75rem);
+  --header-width: clamp(23.438rem, 16.285rem + 30.516vw, 43.75rem);
+  --container-width: clamp(23.438rem, 16.373rem + 30.141vw, 43.5rem);
   --text-stroke-color: #fff;
   --mix-blend-color: #fff;
   --contour-color: #000;
